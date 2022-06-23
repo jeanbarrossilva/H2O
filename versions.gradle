@@ -1,0 +1,21 @@
+buildscript {
+    ext {
+        versions = [
+            android: [
+                sdk: [
+                    compile: 32,
+                    min: 21,
+                    target: 32
+                ]
+            ],
+            h2o: [
+                code: 1,
+                name: '1.0.0'
+            ],
+            gradle: '7.1.2',
+            java: JavaVersion.VERSION_1_8,
+            kotlin: '1.6.10',
+            material: '1.6.0'
+        ]
+    }
+}

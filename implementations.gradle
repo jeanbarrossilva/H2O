@@ -1,0 +1,9 @@
+buildscript {
+    apply from: 'versions.gradle'
+
+    ext {
+        implementations = [
+            material: "com.google.android.material:material:${versions.material}"
+        ]
+    }
+}
