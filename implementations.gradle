@@ -3,6 +3,15 @@ buildscript {
 
     ext {
         implementations = [
+            kotlin: [
+                test: "org.jetbrains.kotlin:kotlin-test"
+            ],
+            kotlinx: [
+                coroutines: [
+                    test: "org.jetbrains.kotlinx:kotlinx-coroutines-test:" +
+                        "${versions.kotlinx.coroutines}"
+                ]
+            ],
             material: "com.google.android.material:material:${versions.material}"
         ]
     }

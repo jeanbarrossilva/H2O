@@ -12,10 +12,13 @@ buildscript {
                 code: 1,
                 name: '1.0.0'
             ],
-            gradle: '7.1.2',
+            gradle: '7.2.1',
             java: JavaVersion.VERSION_1_8,
-            kotlin: '1.6.10',
-            material: '1.6.0'
+            kotlin: '1.7.0',
+            kotlinx: [
+                coroutines: '1.6.3'
+            ],
+            material: '1.6.1'
         ]
     }
 }
