@@ -1,3 +1,4 @@
 rootProject.name = 'H2O'
 include ':app'
 include ':logger'
+include ':calculator'
