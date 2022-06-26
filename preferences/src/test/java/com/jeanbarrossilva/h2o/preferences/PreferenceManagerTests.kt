@@ -1,5 +1,7 @@
 package com.jeanbarrossilva.h2o.preferences
 
+import com.jeanbarrossilva.h2o.drinker.Age
+import com.jeanbarrossilva.h2o.drinker.Drinker
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
@@ -15,6 +17,15 @@ class PreferenceManagerTests {
     fun tearDown() {
         runTest {
             preferenceManager.reset()
+        }
+    }
+
+    @Test
+    fun `GIVEN a drinker WHEN setting it THEN it's set`() {
+        val drinker = Drinker(Age of 18, weightInKilograms = 45)
+        runTest {
+            preferenceManager.setDrinker(drinker)
+            assertEquals(drinker, preferenceManager.getDrinker())
         }
     }
 

@@ -1,4 +1,4 @@
-package com.jeanbarrossilva.h2o.calculator.drinker
+package com.jeanbarrossilva.h2o.drinker
 
 import java.util.UUID
 

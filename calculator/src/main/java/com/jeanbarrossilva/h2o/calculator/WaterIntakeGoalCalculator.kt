@@ -1,7 +1,7 @@
 package com.jeanbarrossilva.h2o.calculator
 
-import com.jeanbarrossilva.h2o.calculator.drinker.Age
-import com.jeanbarrossilva.h2o.calculator.drinker.Drinker
+import com.jeanbarrossilva.h2o.drinker.Age
+import com.jeanbarrossilva.h2o.drinker.Drinker
 
 object WaterIntakeGoalCalculator {
     fun calculate(drinker: Drinker): Long {

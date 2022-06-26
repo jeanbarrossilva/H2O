@@ -1,6 +1,5 @@
-package com.jeanbarrossilva.h2o.calculator
+package com.jeanbarrossilva.h2o.drinker
 
-import com.jeanbarrossilva.h2o.calculator.drinker.Age
 import kotlin.test.Test
 import kotlin.test.assertFailsWith
 import kotlin.test.assertIs
