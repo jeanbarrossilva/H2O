@@ -1,11 +1,16 @@
 package com.jeanbarrossilva.h2o.preferences
 
 import com.jeanbarrossilva.h2o.drinker.Drinker
+import com.jeanbarrossilva.h2o.logger.intake.Intake
 
 interface PreferenceManager {
     suspend fun getDrinker(): Drinker?
 
     suspend fun setDrinker(drinker: Drinker)
+
+    suspend fun getIntake(): Intake?
+
+    suspend fun setIntake(intake: Intake)
 
     suspend fun getIntakeGoal(): Long?
 

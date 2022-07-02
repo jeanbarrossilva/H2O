@@ -1,0 +1,52 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk versions.android.sdk.compile
+
+    defaultConfig {
+        minSdk versions.android.sdk.min
+        targetSdk versions.android.sdk.target
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    compileOptions {
+        sourceCompatibility versions.java
+        targetCompatibility versions.java
+    }
+
+    kotlinOptions {
+        jvmTarget = versions.java.toString()
+        freeCompilerArgs += ['-opt-in=kotlin.RequiresOptIn']
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion versions.compose
+    }
+}
+
+dependencies {
+    implementation project(':logger')
+    implementation project(':preferences')
+    implementation project(':ui')
+    implementation implementations.compose.material
+    implementation implementations.constraintlayout.compose
+    implementation implementations.compose.material_icons_extended
+    implementation implementations.mpandroidchart
+}

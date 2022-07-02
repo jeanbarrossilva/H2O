@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="today">Hoje</string>
+    <string name="today_intake">%s mL</string>
+    <string name="today_intake_chart_intake_total">de %s mL</string>
+    <string name="today_log_intake_content_description">Registrar</string>
+    <string name="today_history_content_description">Histórico</string>
+    <string name="today_intake_card_info_drink_water">Água</string>
+    <string name="today_intake_card_icon_drink_content_description">Ícone da bebida</string>
+</resources>

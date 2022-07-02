@@ -3,7 +3,27 @@ buildscript {
 
     ext {
         implementations = [
+            appcompat: "androidx.appcompat:appcompat:${versions.appcompat}",
+            compose: [
+                material: "androidx.compose.material:material:${versions.compose}",
+                material_icons_extended: "androidx.compose.material:material-icons-extended:" +
+                    "${versions.compose}",
+                material3: "androidx.compose.material3:material3:${versions.compose_material}",
+                ui: [
+                    tooling: "androidx.compose.ui:ui-tooling:${versions.compose}"
+                ]
+            ],
+            constraintlayout: [
+                compose: "androidx.constraintlayout:constraintlayout-compose:" +
+                    "${versions.constraintlayout}"
+            ],
+            customview: "androidx.customview:customview:${versions.customview}",
+            customview_poolingcontainer: "androidx.customview:customview-poolingcontainer:" +
+                "${versions.customview_poolingcontainer}",
+            fragment: "androidx.fragment:fragment-ktx:${versions.fragment}",
+            koin: "io.insert-koin:koin-android:${versions.koin}",
             kotlin: [
+                reflect: "org.jetbrains.kotlin:kotlin-reflect",
                 test: "org.jetbrains.kotlin:kotlin-test"
             ],
             kotlinx: [
@@ -12,7 +32,12 @@ buildscript {
                         "${versions.kotlinx.coroutines}"
                 ]
             ],
-            material: "com.google.android.material:material:${versions.material}"
+            material: "com.google.android.material:material:${versions.material}",
+            mpandroidchart: "com.github.philjay:mpandroidchart:${versions.mpandroidchart}",
+            navigation: [
+                fragment: "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
+                ui: "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+            ]
         ]
     }
 }

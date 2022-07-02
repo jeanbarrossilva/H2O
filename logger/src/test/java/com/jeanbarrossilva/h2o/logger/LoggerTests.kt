@@ -1,6 +1,6 @@
 package com.jeanbarrossilva.h2o.logger
 
-import com.jeanbarrossilva.h2o.logger.fixtures.createIntake
+import com.jeanbarrossilva.h2o.logger.intake.Intake
 import com.jeanbarrossilva.h2o.logger.time.MomentProvider
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
@@ -18,7 +18,7 @@ class LoggerTests {
     @Test
     fun `GIVEN added intakes and removed ones WHEN getting all THEN the remaining are returned`() {
         runTest {
-            repeat(256) { logger.log(createIntake()) }
+            repeat(256) { logger.log(Intake.sample) }
             logger.getLogs().slice(8..31).forEach { logger.remove(it) }
             assertEquals(232, logger.getLogs().size)
         }
@@ -27,7 +27,7 @@ class LoggerTests {
     @Test
     fun `GIVEN an intake WHEN logging it THEN it's logged`() {
         runTest {
-            val entry = logger.log(createIntake())
+            val entry = logger.log(Intake.sample)
             assertEquals(entry, logger.getLogById(entry.id))
         }
     }
@@ -35,7 +35,7 @@ class LoggerTests {
     @Test
     fun `GIVEN an intake WHEN logging it THEN its log has been created now`() {
         runTest {
-            val log = logger.log(createIntake())
+            val log = logger.log(Intake.sample)
             assertEquals(momentProvider.provide(), log.creationDate)
         }
     }
@@ -43,7 +43,7 @@ class LoggerTests {
     @Test
     fun `GIVEN an intake WHEN removing it THEN it's removed`() {
         runTest {
-            val entry = logger.log(createIntake())
+            val entry = logger.log(Intake.sample)
             logger.remove(entry)
             assertNull(logger.getLogById(entry.id))
         }

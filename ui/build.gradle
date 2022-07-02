@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    compileSdk versions.android.sdk.compile
+
+    defaultConfig {
+        minSdk versions.android.sdk.min
+        targetSdk versions.android.sdk.target
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'),
+                'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        compose true
+        viewBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility versions.java
+        targetCompatibility versions.java
+    }
+
+    kotlinOptions {
+        jvmTarget = versions.java.toString()
+        freeCompilerArgs += ['-opt-in=kotlin.RequiresOptIn']
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion versions.compose
+    }
+}
+
+dependencies {
+    api implementations.compose.material3
+    api implementations.compose.ui.tooling
+    api implementations.fragment
+    api implementations.koin
+    api implementations.navigation.fragment
+    api implementations.navigation.ui
+
+    implementation implementations.appcompat
+    implementation implementations.kotlin.reflect
+
+    debugApi implementations.customview
+    debugApi implementations.customview_poolingcontainer
+}

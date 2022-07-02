@@ -10,6 +10,7 @@ java {
 
 dependencies {
     implementation project(':drinker')
+    implementation project(':logger')
     testImplementation implementations.kotlin.test
     testImplementation implementations.kotlinx.coroutines.test
 }

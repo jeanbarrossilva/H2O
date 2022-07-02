@@ -4,21 +4,31 @@ buildscript {
             android: [
                 sdk: [
                     compile: 32,
-                    min: 21,
+                    min: 26,
                     target: 32
                 ]
             ],
+            appcompat: '1.4.2',
+            compose: '1.2.0-rc02',
+            compose_material: '1.0.0-alpha13',
+            constraintlayout: '1.0.1',
+            customview: '1.1.0',
+            customview_poolingcontainer: '1.0.0-rc01',
+            fragment: '1.4.1',
             h2o: [
                 code: 1,
                 name: '1.0.0'
             ],
             gradle: '7.2.1',
             java: JavaVersion.VERSION_1_8,
-            kotlin: '1.7.0',
+            koin: '3.2.0',
+            kotlin: '1.6.21',
             kotlinx: [
                 coroutines: '1.6.3'
             ],
-            material: '1.6.1'
+            material: '1.6.1',
+            mpandroidchart: 'v3.1.0',
+            navigation: '2.5.0'
         ]
     }
 }

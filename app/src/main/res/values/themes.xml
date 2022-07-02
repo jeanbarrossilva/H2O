@@ -1,5 +1,0 @@
-<resources>
-    <style
-        name="Theme.H2O"
-        parent="Theme.MaterialComponents.DayNight.NoActionBar" />
-</resources>
