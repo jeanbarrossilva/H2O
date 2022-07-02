@@ -36,7 +36,7 @@ class LoggerTests {
     fun `GIVEN an intake WHEN logging it THEN its log has been created now`() {
         runTest {
             val log = logger.log(Intake.sample)
-            assertEquals(momentProvider.provide(), log.creationDate)
+            assertEquals(momentProvider.provide(), log.creationMoment)
         }
     }
 
