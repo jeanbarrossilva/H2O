@@ -89,13 +89,13 @@ internal fun Today(
         ) {
             Box(
                 Modifier
-                    .fillMaxWidth()
-                    .padding(Spacing.xxxxxxl)
                     .onGloballyPositioned { coordinates ->
                         chartBoxBottomBound = with(density) {
                             coordinates.boundsInWindow().bottom.toDp()
                         }
-                    },
+                    }
+                    .fillMaxWidth()
+                    .padding(Spacing.xxxxxxl),
                 Alignment.Center
             ) {
                 IntakeStatusChart(status)
