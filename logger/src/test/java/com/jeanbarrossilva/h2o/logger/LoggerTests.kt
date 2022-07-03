@@ -1,7 +1,7 @@
 package com.jeanbarrossilva.h2o.logger
 
+import com.jeanbarrossilva.h2o.logger.moment.MomentProvider
 import com.jeanbarrossilva.h2o.model.intake.Intake
-import com.jeanbarrossilva.h2o.logger.time.MomentProvider
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import java.time.LocalDateTime

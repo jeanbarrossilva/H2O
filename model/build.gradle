@@ -9,5 +9,5 @@ java {
 }
 
 dependencies {
-    testImplementation implementations.kotlin.test
+    testImplementation libraries.kotlin.test
 }

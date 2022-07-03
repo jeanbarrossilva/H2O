@@ -11,5 +11,5 @@ java {
 dependencies {
     implementation project(':model')
 
-    testImplementation implementations.kotlin.test
+    testImplementation libraries.kotlin.test
 }

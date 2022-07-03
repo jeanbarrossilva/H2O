@@ -11,6 +11,6 @@ java {
 dependencies {
     implementation project(':model')
 
-    testImplementation implementations.kotlin.test
-    testImplementation implementations.kotlinx.coroutines.test
+    testImplementation libraries.kotlin.test
+    testImplementation libraries.kotlinx.coroutines.test
 }

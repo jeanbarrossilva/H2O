@@ -1,5 +1,5 @@
 buildscript {
-    apply from: 'implementations.gradle'
+    apply from: 'libraries.gradle'
     apply from: 'plugins.gradle'
     apply from: 'versions.gradle'
 

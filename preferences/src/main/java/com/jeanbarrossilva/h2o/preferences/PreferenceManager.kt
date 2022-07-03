@@ -1,6 +1,6 @@
 package com.jeanbarrossilva.h2o.preferences
 
-import com.jeanbarrossilva.h2o.drinker.Drinker
+import com.jeanbarrossilva.h2o.model.drinker.Drinker
 import com.jeanbarrossilva.h2o.model.intake.Intake
 
 interface PreferenceManager {

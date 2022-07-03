@@ -43,16 +43,16 @@ android {
 }
 
 dependencies {
-    api implementations.compose.material3
-    api implementations.compose.ui.tooling
-    api implementations.fragment
-    api implementations.koin
-    api implementations.navigation.fragment
-    api implementations.navigation.ui
+    api libraries.compose.material3
+    api libraries.compose.ui.tooling
+    api libraries.fragment
+    api libraries.koin
+    api libraries.navigation.fragment
+    api libraries.navigation.ui
 
-    implementation implementations.appcompat
-    implementation implementations.kotlin.reflect
+    implementation libraries.appcompat
+    implementation libraries.kotlin.reflect
 
-    debugApi implementations.customview
-    debugApi implementations.customview_poolingcontainer
+    debugApi libraries.customview
+    debugApi libraries.customview_poolingcontainer
 }

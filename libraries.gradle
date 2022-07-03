@@ -2,7 +2,7 @@ buildscript {
     apply from: 'versions.gradle'
 
     ext {
-        implementations = [
+        libraries = [
             appcompat: "androidx.appcompat:appcompat:${versions.appcompat}",
             compose: [
                 material: "androidx.compose.material:material:${versions.compose}",

@@ -1,4 +1,4 @@
-package com.jeanbarrossilva.h2o.logger.time
+package com.jeanbarrossilva.h2o.logger.moment
 
 import java.time.LocalDateTime
 
