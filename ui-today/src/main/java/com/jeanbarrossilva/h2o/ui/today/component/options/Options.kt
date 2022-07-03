@@ -16,7 +16,7 @@ import com.jeanbarrossilva.h2o.ui.environment.Spacing
 import com.jeanbarrossilva.h2o.ui.theme.H2OTheme
 
 @Composable
-fun Options(
+internal fun Options(
     isHistoryOptionShown: Boolean,
     onIntakeLogRequest: () -> Unit,
     onHistoryRequest: () -> Unit,

@@ -16,7 +16,7 @@ import com.jeanbarrossilva.h2o.ui.theme.H2OTheme
 import com.jeanbarrossilva.h2o.ui.today.R
 
 @Composable
-fun OptionsHistoryOption(
+internal fun OptionsHistoryOption(
     modifier: Modifier = Modifier,
     onClick: () -> Unit
 ) {
