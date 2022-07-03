@@ -23,13 +23,13 @@ import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.jeanbarrossilva.h2o.model.intake.Intake
 import com.jeanbarrossilva.h2o.model.intake.IntakeLog
+import com.jeanbarrossilva.h2o.model.intake.IntakeStatus
 import com.jeanbarrossilva.h2o.ui.component.Background
 import com.jeanbarrossilva.h2o.ui.component.FloatingActionButton
 import com.jeanbarrossilva.h2o.ui.environment.Spacing
 import com.jeanbarrossilva.h2o.ui.theme.H2OTheme
-import com.jeanbarrossilva.h2o.ui.today.component.IntakeChart
+import com.jeanbarrossilva.h2o.ui.today.component.IntakeStatusChart
 import com.jeanbarrossilva.h2o.ui.today.component.historysheet.HistorySheet
 import com.jeanbarrossilva.h2o.ui.today.component.options.Options
 import kotlinx.coroutines.launch
@@ -40,20 +40,17 @@ internal fun Today(
     onIntakeLogRequest: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var intake by remember { mutableStateOf(Intake.zero) }
+    var status by remember { mutableStateOf(IntakeStatus.zero) }
     var logs by remember { mutableStateOf(emptyList<IntakeLog>()) }
-    var intakeGoalInMilliliters by remember { mutableStateOf(0L) }
 
     LaunchedEffect(Unit) {
-        intake = viewModel.getIntake()
+        status = viewModel.getIntakeStatus()
         logs = viewModel.getLogs()
-        intakeGoalInMilliliters = viewModel.getIntakeGoal()
     }
 
     Today(
-        intake,
+        status,
         logs,
-        intakeGoalInMilliliters,
         onIntakeLogRequest,
         modifier
     )
@@ -62,9 +59,8 @@ internal fun Today(
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 internal fun Today(
-    intake: Intake,
+    status: IntakeStatus,
     logs: List<IntakeLog>,
-    intakeGoalInMilliliters: Long,
     onIntakeLogRequest: () -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -102,10 +98,7 @@ internal fun Today(
                     },
                 Alignment.Center
             ) {
-                IntakeChart(
-                    intake,
-                    intakeGoalInMilliliters
-                )
+                IntakeStatusChart(status)
             }
 
             Options(
@@ -130,9 +123,8 @@ internal fun Today(
 private fun TodayPreview() {
     H2OTheme {
         Today(
-            Intake.sample,
+            IntakeStatus.sample,
             IntakeLog.samples,
-            intakeGoalInMilliliters = 4_500,
             onIntakeLogRequest = { }
         )
     }

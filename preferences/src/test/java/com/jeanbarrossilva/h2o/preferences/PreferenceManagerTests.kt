@@ -1,7 +1,7 @@
 package com.jeanbarrossilva.h2o.preferences
 
-import com.jeanbarrossilva.h2o.drinker.Drinker
-import com.jeanbarrossilva.h2o.model.intake.Intake
+import com.jeanbarrossilva.h2o.model.drinker.Drinker
+import com.jeanbarrossilva.h2o.model.intake.IntakeStatus
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
@@ -29,27 +29,21 @@ class PreferenceManagerTests {
     }
 
     @Test
-    fun `GIVEN an intake WHEN setting it THEN it's set`() {
+    fun `GIVEN an intake status WHEN setting it THEN it's set`() {
         runTest {
-            preferenceManager.setIntake(Intake.sample)
-            assertEquals(Intake.sample, preferenceManager.getIntake())
+            preferenceManager.setIntakeStatus(IntakeStatus.sample)
+            assertEquals(IntakeStatus.sample, preferenceManager.getIntakeStatus())
         }
     }
 
     @Test
-    fun `GIVEN an intake goal WHEN setting it THEN it's set`() {
+    fun `GIVEN a reset WHEN getting the properties that were previously set THEN they're null`() {
         runTest {
-            preferenceManager.setIntakeGoal(4_000)
-            assertEquals(4_000, preferenceManager.getIntakeGoal())
-        }
-    }
-
-    @Test
-    fun `GIVEN a set property WHEN resetting THEN it's gone`() {
-        runTest {
-            preferenceManager.setIntakeGoal(3_500)
+            preferenceManager.setDrinker(Drinker.sample)
+            preferenceManager.setIntakeStatus(IntakeStatus.sample)
             preferenceManager.reset()
-            assertNull(preferenceManager.getIntakeGoal())
+            assertNull(preferenceManager.getDrinker())
+            assertNull(preferenceManager.getIntakeStatus())
         }
     }
 }

@@ -29,7 +29,8 @@ import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
-import com.jeanbarrossilva.h2o.model.intake.Intake
+import com.jeanbarrossilva.h2o.model.extensions.intakestatus.percentage
+import com.jeanbarrossilva.h2o.model.intake.IntakeStatus
 import com.jeanbarrossilva.h2o.ui.environment.ContentAlpha
 import com.jeanbarrossilva.h2o.ui.environment.Spacing
 import com.jeanbarrossilva.h2o.ui.theme.H2OTheme
@@ -38,22 +39,19 @@ import com.jeanbarrossilva.h2o.ui.today.extensions.chart.piechart.clean
 import com.jeanbarrossilva.h2o.ui.today.extensions.number.formatted
 
 @Composable
-internal fun IntakeChart(
-    intake: Intake,
-    intakeGoalInMilliliters: Long,
+internal fun IntakeStatusChart(
+    status: IntakeStatus,
     modifier: Modifier = Modifier
 ) {
     val chartSize = 264.dp
     val statusShape = CircleShape
-    val intakePercentage = intake.milliliters.toFloat() / intakeGoalInMilliliters.toFloat()
-    val intakeEntry = PieEntry(intakePercentage)
+    val intakeEntry = PieEntry(status.percentage)
     val intakeEntryColorValue = MaterialTheme.colorScheme.primary.toArgb()
-    val remainingIntakeEntry = PieEntry(1f - intakePercentage)
-    val remainingIntakeEntryColorValue = Color.TRANSPARENT
+    val remainingIntakeEntry = PieEntry(1f - status.percentage)
     val entries = listOf(intakeEntry, remainingIntakeEntry)
     val dataSetLabel = ""
     val dataSet = PieDataSet(entries, dataSetLabel).apply {
-        colors = listOf(intakeEntryColorValue, remainingIntakeEntryColorValue)
+        colors = listOf(intakeEntryColorValue, Color.TRANSPARENT)
     }
     val data = PieData(dataSet)
 
@@ -86,14 +84,14 @@ internal fun IntakeChart(
                 Alignment.CenterHorizontally
             ) {
                 Text(
-                    stringResource(R.string.today_intake).format(intake.milliliters.formatted),
+                    stringResource(R.string.today_intake).format(status.current.milliliters.formatted),
                     fontWeight = FontWeight.Bold,
                     style = LocalTextStyle.current + MaterialTheme.typography.headlineMedium
                 )
 
                 Text(
                     stringResource(R.string.today_intake_chart_intake_total)
-                        .format(intakeGoalInMilliliters.formatted),
+                        .format(status.goal.milliliters.formatted),
                     color = LocalTextStyle.current.color.copy(ContentAlpha.MEDIUM),
                     style = LocalTextStyle.current + MaterialTheme.typography.bodySmall
                 )
@@ -105,11 +103,8 @@ internal fun IntakeChart(
 @Composable
 @Preview
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
-private fun IntakeChartPreview() {
+private fun IntakeStatusChartPreview() {
     H2OTheme {
-        IntakeChart(
-            Intake.sample,
-            intakeGoalInMilliliters = 4_500L
-        )
+        IntakeStatusChart(IntakeStatus.sample)
     }
 }
