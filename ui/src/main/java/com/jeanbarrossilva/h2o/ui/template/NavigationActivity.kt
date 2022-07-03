@@ -5,13 +5,9 @@ import androidx.annotation.NavigationRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import com.jeanbarrossilva.h2o.ui.R
-import com.jeanbarrossilva.h2o.ui.binding.DefaultViewBinder
-import com.jeanbarrossilva.h2o.ui.binding.ViewBinder
-import com.jeanbarrossilva.h2o.ui.databinding.ActivityNavigationBinding
 
 open class NavigationActivity(@NavigationRes private val navGraphResId: Int):
-    AppCompatActivity(R.layout.activity_navigation),
-    ViewBinder<ActivityNavigationBinding> by DefaultViewBinder() {
+    AppCompatActivity(R.layout.activity_navigation) {
     private val navController
         get() = navHostFragment.navController
     private val navHostFragment
