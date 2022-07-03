@@ -29,7 +29,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
-import com.jeanbarrossilva.h2o.logger.intake.Intake
+import com.jeanbarrossilva.h2o.model.intake.Intake
 import com.jeanbarrossilva.h2o.ui.environment.ContentAlpha
 import com.jeanbarrossilva.h2o.ui.environment.Spacing
 import com.jeanbarrossilva.h2o.ui.theme.H2OTheme

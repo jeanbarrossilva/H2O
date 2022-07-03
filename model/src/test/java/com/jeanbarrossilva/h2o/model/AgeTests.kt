@@ -1,12 +1,13 @@
-package com.jeanbarrossilva.h2o.drinker
+package com.jeanbarrossilva.h2o.model
 
+import com.jeanbarrossilva.h2o.model.drinker.Age
 import kotlin.test.Test
 import kotlin.test.assertFailsWith
 import kotlin.test.assertIs
 
 class AgeTests {
     @Test
-    fun `GIVEN a value equal or greater than 0 WHEN creating an age with it THEN it throws`() {
+    fun `GIVEN a value equal or lower than 0 WHEN creating an age with it THEN it throws`() {
         assertFailsWith<IllegalArgumentException> { Age of -32 }
         assertFailsWith<IllegalArgumentException> { Age of 0 }
     }

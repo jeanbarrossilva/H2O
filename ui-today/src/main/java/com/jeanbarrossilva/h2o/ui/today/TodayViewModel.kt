@@ -2,9 +2,9 @@ package com.jeanbarrossilva.h2o.ui.today
 
 import androidx.lifecycle.ViewModel
 import com.jeanbarrossilva.h2o.logger.Logger
-import com.jeanbarrossilva.h2o.logger.extensions.intake.orZero
-import com.jeanbarrossilva.h2o.logger.intake.Intake
-import com.jeanbarrossilva.h2o.logger.intake.IntakeLog
+import com.jeanbarrossilva.h2o.model.extensions.orZero
+import com.jeanbarrossilva.h2o.model.intake.Intake
+import com.jeanbarrossilva.h2o.model.intake.IntakeLog
 import com.jeanbarrossilva.h2o.preferences.PreferenceManager
 
 internal class TodayViewModel(

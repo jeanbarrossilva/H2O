@@ -9,6 +9,7 @@ java {
 }
 
 dependencies {
-    implementation project(':drinker')
+    implementation project(':model')
+
     testImplementation implementations.kotlin.test
 }

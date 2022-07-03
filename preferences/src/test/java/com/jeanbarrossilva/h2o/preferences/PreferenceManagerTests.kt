@@ -1,7 +1,7 @@
 package com.jeanbarrossilva.h2o.preferences
 
 import com.jeanbarrossilva.h2o.drinker.Drinker
-import com.jeanbarrossilva.h2o.logger.intake.Intake
+import com.jeanbarrossilva.h2o.model.intake.Intake
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.junit.Test

@@ -1,7 +1,7 @@
 package com.jeanbarrossilva.h2o.logger
 
-import com.jeanbarrossilva.h2o.logger.intake.Intake
-import com.jeanbarrossilva.h2o.logger.intake.IntakeLog
+import com.jeanbarrossilva.h2o.model.intake.Intake
+import com.jeanbarrossilva.h2o.model.intake.IntakeLog
 
 interface Logger {
     suspend fun getLogs(): List<IntakeLog>

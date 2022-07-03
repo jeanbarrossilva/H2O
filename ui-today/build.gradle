@@ -43,6 +43,7 @@ android {
 
 dependencies {
     implementation project(':logger')
+    implementation project(':model')
     implementation project(':preferences')
     implementation project(':ui')
     implementation implementations.compose.material

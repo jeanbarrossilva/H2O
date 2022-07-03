@@ -1,6 +1,6 @@
 package com.jeanbarrossilva.h2o.logger
 
-import com.jeanbarrossilva.h2o.logger.intake.Intake
+import com.jeanbarrossilva.h2o.model.intake.Intake
 import com.jeanbarrossilva.h2o.logger.time.MomentProvider
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
@@ -27,8 +27,8 @@ class LoggerTests {
     @Test
     fun `GIVEN an intake WHEN logging it THEN it's logged`() {
         runTest {
-            val entry = logger.log(Intake.sample)
-            assertEquals(entry, logger.getLogById(entry.id))
+            val log = logger.log(Intake.sample)
+            assertEquals(log, logger.getLogById(log.id))
         }
     }
 
@@ -43,9 +43,9 @@ class LoggerTests {
     @Test
     fun `GIVEN an intake WHEN removing it THEN it's removed`() {
         runTest {
-            val entry = logger.log(Intake.sample)
-            logger.remove(entry)
-            assertNull(logger.getLogById(entry.id))
+            val log = logger.log(Intake.sample)
+            logger.remove(log)
+            assertNull(logger.getLogById(log.id))
         }
     }
 }

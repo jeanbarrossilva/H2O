@@ -10,7 +10,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.jeanbarrossilva.h2o.logger.intake.IntakeLog
+import com.jeanbarrossilva.h2o.model.intake.IntakeLog
 import com.jeanbarrossilva.h2o.ui.component.sheet.Sheet
 import com.jeanbarrossilva.h2o.ui.environment.Spacing
 import com.jeanbarrossilva.h2o.ui.theme.H2OTheme

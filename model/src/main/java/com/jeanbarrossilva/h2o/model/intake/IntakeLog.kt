@@ -1,4 +1,4 @@
-package com.jeanbarrossilva.h2o.logger.intake
+package com.jeanbarrossilva.h2o.model.intake
 
 import java.time.LocalDateTime
 import java.util.UUID

@@ -1,4 +1,4 @@
-package com.jeanbarrossilva.h2o.logger.intake
+package com.jeanbarrossilva.h2o.model.intake
 
 data class Intake(val milliliters: Long) {
     companion object {

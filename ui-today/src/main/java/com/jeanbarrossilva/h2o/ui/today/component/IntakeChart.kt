@@ -29,7 +29,7 @@ import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
-import com.jeanbarrossilva.h2o.logger.intake.Intake
+import com.jeanbarrossilva.h2o.model.intake.Intake
 import com.jeanbarrossilva.h2o.ui.environment.ContentAlpha
 import com.jeanbarrossilva.h2o.ui.environment.Spacing
 import com.jeanbarrossilva.h2o.ui.theme.H2OTheme

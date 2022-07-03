@@ -1,4 +1,4 @@
-package com.jeanbarrossilva.h2o.drinker
+package com.jeanbarrossilva.h2o.model.drinker
 
 sealed class Age {
     abstract val value: Int
@@ -9,7 +9,7 @@ sealed class Age {
 
     data class Senior internal constructor(override val value: Int): Age()
 
-    data class SeniorPlus(override val value: Int): Age()
+    data class SeniorPlus internal constructor(override val value: Int): Age()
 
     companion object {
         infix fun of(value: Int): Age {

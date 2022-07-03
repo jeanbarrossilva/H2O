@@ -1,7 +1,7 @@
 package com.jeanbarrossilva.h2o.preferences
 
 import com.jeanbarrossilva.h2o.drinker.Drinker
-import com.jeanbarrossilva.h2o.logger.intake.Intake
+import com.jeanbarrossilva.h2o.model.intake.Intake
 
 class InMemoryPreferenceManager: PreferenceManager {
     private val preferences = mutableMapOf<String, Any?>(

@@ -9,6 +9,8 @@ java {
 }
 
 dependencies {
+    implementation project(':model')
+
     testImplementation implementations.kotlin.test
     testImplementation implementations.kotlinx.coroutines.test
 }

@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.Dp
-import com.jeanbarrossilva.h2o.logger.intake.IntakeLog
+import com.jeanbarrossilva.h2o.model.intake.IntakeLog
 import com.jeanbarrossilva.h2o.ui.component.sheet.Sheet
 
 @OptIn(ExperimentalMaterialApi::class)

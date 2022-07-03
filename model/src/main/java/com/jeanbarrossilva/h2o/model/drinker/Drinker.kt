@@ -1,4 +1,4 @@
-package com.jeanbarrossilva.h2o.drinker
+package com.jeanbarrossilva.h2o.model.drinker
 
 import java.util.UUID
 
