@@ -49,7 +49,7 @@ internal fun IntakeCard(
         modifier
             .fillMaxWidth()
             .clip(shape)
-            .border(2.dp, MaterialTheme.colorScheme.surfaceVariant.copy(ContentAlpha.MEDIUM), shape)
+            .border(1.dp, MaterialTheme.colorScheme.onSurfaceVariant, shape)
             .background(backgroundColor)
             .clickable(role = Role.Button, onClick = onClick)
             .padding(spacing)

@@ -7,27 +7,20 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.contentColorFor
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.Dp
 import com.jeanbarrossilva.h2o.model.intake.IntakeLog
 import com.jeanbarrossilva.h2o.ui.component.sheet.Sheet
+import com.jeanbarrossilva.h2o.ui.environment.ContentAlpha
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 internal fun HistorySheet(
     state: ModalBottomSheetState,
     logs: List<IntakeLog>,
-    onOffsetChange: (offset: Dp) -> Unit,
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit
 ) {
     val backgroundColor = MaterialTheme.colorScheme.surface
     val contentColor = contentColorFor(backgroundColor)
-
-    HistorySheetOffsetDisposableEffect(
-        state,
-        onOffsetChange
-    )
 
     ModalBottomSheetLayout(
         sheetContent = { HistorySheetContent(logs) },
@@ -36,7 +29,7 @@ internal fun HistorySheet(
         Sheet.shape,
         sheetBackgroundColor = backgroundColor,
         sheetContentColor = contentColor,
-        scrimColor = Color.Transparent,
+        scrimColor = MaterialTheme.colorScheme.onSurface.copy(ContentAlpha.SCRIM),
         content = content
     )
 }

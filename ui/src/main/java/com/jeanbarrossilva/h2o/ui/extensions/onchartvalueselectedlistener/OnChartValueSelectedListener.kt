@@ -1,4 +1,4 @@
-package com.jeanbarrossilva.h2o.ui.today.extensions.onchartvalueselectedlistener
+package com.jeanbarrossilva.h2o.ui.extensions.onchartvalueselectedlistener
 
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 

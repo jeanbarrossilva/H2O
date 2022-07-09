@@ -49,5 +49,4 @@ dependencies {
     implementation libraries.compose.material
     implementation libraries.constraintlayout.compose
     implementation libraries.compose.material_icons_extended
-    implementation libraries.mpandroidchart
 }

@@ -9,11 +9,13 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.jeanbarrossilva.h2o.ui.extensions.modifier.on
 import com.jeanbarrossilva.h2o.ui.theme.H2OTheme
 
 @Composable
 fun Background(
     modifier: Modifier = Modifier,
+    isFilling: Boolean = true,
     content: @Composable BoxScope.() -> Unit
 ) {
     Surface(
@@ -21,7 +23,7 @@ fun Background(
         color = MaterialTheme.colorScheme.background
     ) {
         Box(
-            Modifier.fillMaxSize(),
+            Modifier.on(isFilling) { fillMaxSize() },
             content = content
         )
     }

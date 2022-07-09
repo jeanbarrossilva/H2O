@@ -1,7 +1,6 @@
 package com.jeanbarrossilva.h2o.ui.today.component
 
 import android.content.res.Configuration
-import android.graphics.Color
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -18,53 +17,36 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
-import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.viewinterop.AndroidView
-import com.github.mikephil.charting.charts.PieChart
-import com.github.mikephil.charting.data.PieData
-import com.github.mikephil.charting.data.PieDataSet
-import com.github.mikephil.charting.data.PieEntry
 import com.jeanbarrossilva.h2o.model.extensions.intakestatus.percentage
 import com.jeanbarrossilva.h2o.model.intake.IntakeStatus
+import com.jeanbarrossilva.h2o.ui.component.chart.Chart
+import com.jeanbarrossilva.h2o.ui.component.chart.pie.PieChart
 import com.jeanbarrossilva.h2o.ui.environment.ContentAlpha
 import com.jeanbarrossilva.h2o.ui.environment.Spacing
+import com.jeanbarrossilva.h2o.ui.extensions.number.format
 import com.jeanbarrossilva.h2o.ui.theme.H2OTheme
 import com.jeanbarrossilva.h2o.ui.today.R
-import com.jeanbarrossilva.h2o.ui.today.extensions.chart.piechart.clean
-import com.jeanbarrossilva.h2o.ui.today.extensions.number.formatted
 
 @Composable
 internal fun IntakeStatusChart(
     status: IntakeStatus,
     modifier: Modifier = Modifier
 ) {
-    val chartSize = 264.dp
     val statusShape = CircleShape
-    val intakeEntry = PieEntry(status.percentage)
-    val intakeEntryColorValue = MaterialTheme.colorScheme.primary.toArgb()
-    val remainingIntakeEntry = PieEntry(1f - status.percentage)
-    val entries = listOf(intakeEntry, remainingIntakeEntry)
-    val dataSetLabel = ""
-    val dataSet = PieDataSet(entries, dataSetLabel).apply {
-        colors = listOf(intakeEntryColorValue, Color.TRANSPARENT)
-    }
-    val data = PieData(dataSet)
+    val sliceColor = MaterialTheme.colorScheme.primary
 
     Box(
         modifier,
         Alignment.Center
     ) {
-        AndroidView(
-            factory = { PieChart(it) },
-            Modifier.size(chartSize)
-        ) { view ->
-            view.data = data
-            view.clean()
+        PieChart {
+            slice(sliceColor, status.percentage)
+            slice(Color.Transparent, 1f - status.percentage)
         }
 
         ProvideTextStyle(
@@ -75,7 +57,7 @@ internal fun IntakeStatusChart(
         ) {
             Column(
                 Modifier
-                    .size(chartSize / 1.24f)
+                    .size(Chart.Size / 1.24f)
                     .padding(Spacing.m)
                     .shadow(16.dp, statusShape)
                     .clip(statusShape)
@@ -84,14 +66,14 @@ internal fun IntakeStatusChart(
                 Alignment.CenterHorizontally
             ) {
                 Text(
-                    stringResource(R.string.today_intake).format(status.current.milliliters.formatted),
-                    fontWeight = FontWeight.Bold,
+                    stringResource(R.string.today_intake)
+                        .format(status.current.milliliters.format()),
                     style = LocalTextStyle.current + MaterialTheme.typography.headlineMedium
                 )
 
                 Text(
                     stringResource(R.string.today_intake_chart_intake_total)
-                        .format(status.goal.milliliters.formatted),
+                        .format(status.goal.milliliters.format()),
                     color = LocalTextStyle.current.color.copy(ContentAlpha.MEDIUM),
                     style = LocalTextStyle.current + MaterialTheme.typography.bodySmall
                 )

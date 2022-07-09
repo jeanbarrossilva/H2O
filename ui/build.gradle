@@ -51,6 +51,7 @@ dependencies {
 
     implementation libraries.appcompat
     implementation libraries.kotlin.reflect
+    implementation libraries.mpandroidchart
 
     debugApi libraries.customview
     debugApi libraries.customview_poolingcontainer

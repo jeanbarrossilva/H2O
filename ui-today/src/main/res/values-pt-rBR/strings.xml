@@ -3,6 +3,10 @@
     <string name="today">Hoje</string>
     <string name="today_intake">%s mL</string>
     <string name="today_intake_chart_intake_total">de %s mL</string>
+    <string name="today_frequency">Frequência</string>
+    <string name="today_frequency_subtitle">
+        Quantidade de água que você ingeriu nos últimos 7 dias.
+    </string>
     <string name="today_log_intake_content_description">Registrar</string>
     <string name="today_history_content_description">Histórico</string>
     <string name="today_intake_card_info_drink_water">Água</string>

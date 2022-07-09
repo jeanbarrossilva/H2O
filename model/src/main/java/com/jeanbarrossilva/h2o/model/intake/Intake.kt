@@ -1,6 +1,10 @@
 package com.jeanbarrossilva.h2o.model.intake
 
 data class Intake(val milliliters: Long): Comparable<Intake> {
+    operator fun div(other: Intake): Intake {
+        return Intake(milliliters / other.milliliters)
+    }
+
     override fun compareTo(other: Intake): Int {
         return milliliters.compareTo(other.milliliters)
     }
