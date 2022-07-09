@@ -4,6 +4,7 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 import com.jeanbarrossilva.h2o.ui.R
 import com.jeanbarrossilva.h2o.ui.extensions.typography.Typography
 import com.jeanbarrossilva.h2o.ui.extensions.typography.TypographyTokens
@@ -16,5 +17,6 @@ val Typography = Typography(
         Font(R.font.arvo_bold_italic, FontWeight.Bold, FontStyle.Italic)
     ),
     headlineMedium = TypographyTokens.HeadlineMedium.copy(fontWeight = FontWeight.Bold),
-    headlineSmall = TypographyTokens.HeadlineSmall.copy(fontWeight = FontWeight.Bold)
+    headlineSmall = TypographyTokens.HeadlineSmall.copy(fontWeight = FontWeight.Bold),
+    bodyLarge = TypographyTokens.BodyLarge.copy(fontSize = 14.sp)
 )

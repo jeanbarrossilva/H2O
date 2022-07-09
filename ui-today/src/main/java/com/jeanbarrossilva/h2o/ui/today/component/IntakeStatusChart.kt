@@ -58,8 +58,8 @@ internal fun IntakeStatusChart(
             Column(
                 Modifier
                     .size(Chart.Size / 1.24f)
-                    .padding(Spacing.m)
-                    .shadow(16.dp, statusShape)
+                    .padding(Spacing.l)
+                    .shadow(4.dp, statusShape)
                     .clip(statusShape)
                     .background(MaterialTheme.colorScheme.surface),
                 Arrangement.spacedBy(Spacing.s, Alignment.CenterVertically),

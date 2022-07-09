@@ -24,7 +24,7 @@ internal fun SectionHeadline(
 ) {
     Column(
         modifier,
-        Arrangement.spacedBy(Spacing.m)
+        Arrangement.spacedBy(Spacing.l)
     ) {
         ProvideTextStyle(
             LocalTextStyle.current + MaterialTheme.typography.headlineSmall
@@ -33,9 +33,7 @@ internal fun SectionHeadline(
         }
 
         ProvideTextStyle(
-            LocalTextStyle.current + MaterialTheme.typography.titleMedium.copy(
-                LocalContentColor.current.copy(ContentAlpha.MEDIUM)
-            )
+            LocalTextStyle.current.copy(LocalContentColor.current.copy(ContentAlpha.MEDIUM))
         ) {
             subtitle?.invoke()
         }
