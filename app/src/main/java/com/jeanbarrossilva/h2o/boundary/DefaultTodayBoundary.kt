@@ -1,8 +1,8 @@
 package com.jeanbarrossilva.h2o.boundary
 
 import androidx.fragment.app.FragmentActivity
-import com.jeanbarrossilva.h2o.ui.history.HistoryFragment
-import com.jeanbarrossilva.h2o.ui.today.TodayBoundary
+import com.jeanbarrossilva.h2o.feature.history.HistoryFragment
+import com.jeanbarrossilva.h2o.feature.today.TodayBoundary
 
 class DefaultTodayBoundary: TodayBoundary {
     override fun navigateToIntakeLogger() {
