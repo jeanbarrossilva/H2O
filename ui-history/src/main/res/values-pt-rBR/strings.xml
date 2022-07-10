@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="history">Histórico</string>
+    <string name="history_intake_card_info_drink_water">Água</string>
+    <string name="history_intake_card_icon_drink_content_description">Ícone da bebida</string>
+</resources>

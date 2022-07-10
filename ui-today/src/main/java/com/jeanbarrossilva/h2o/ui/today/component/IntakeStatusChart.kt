@@ -66,7 +66,7 @@ internal fun IntakeStatusChart(
                 Alignment.CenterHorizontally
             ) {
                 Text(
-                    stringResource(R.string.today_intake)
+                    stringResource(com.jeanbarrossilva.h2o.ui.R.string.intake)
                         .format(status.current.milliliters.format()),
                     style = LocalTextStyle.current + MaterialTheme.typography.headlineMedium
                 )

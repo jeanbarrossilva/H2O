@@ -5,7 +5,6 @@ buildscript {
         libraries = [
             appcompat: "androidx.appcompat:appcompat:${versions.appcompat}",
             compose: [
-                material: "androidx.compose.material:material:${versions.compose}",
                 material_icons_extended: "androidx.compose.material:material-icons-extended:" +
                     "${versions.compose}",
                 material3: "androidx.compose.material3:material3:${versions.compose_material}",

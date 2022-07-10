@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="today">Today</string>
-    <string name="today_intake">%s mL</string>
     <string name="today_intake_chart_intake_total">of %s mL</string>
     <string name="today_frequency">Frequency</string>
     <string name="today_frequency_subtitle">
@@ -9,6 +8,4 @@
     </string>
     <string name="today_log_intake_content_description">Log intake</string>
     <string name="today_history_content_description">History</string>
-    <string name="today_intake_card_info_drink_water">Water</string>
-    <string name="today_intake_card_icon_drink_content_description">Drink icon</string>
 </resources>

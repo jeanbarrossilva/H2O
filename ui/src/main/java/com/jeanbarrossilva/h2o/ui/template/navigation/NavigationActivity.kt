@@ -1,4 +1,4 @@
-package com.jeanbarrossilva.h2o.ui.template
+package com.jeanbarrossilva.h2o.ui.template.navigation
 
 import android.os.Bundle
 import androidx.annotation.NavigationRes

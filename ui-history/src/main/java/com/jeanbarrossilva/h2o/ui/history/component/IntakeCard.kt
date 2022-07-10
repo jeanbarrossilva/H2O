@@ -1,4 +1,4 @@
-package com.jeanbarrossilva.h2o.ui.today.component
+package com.jeanbarrossilva.h2o.ui.history.component
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
@@ -32,8 +32,8 @@ import androidx.constraintlayout.compose.Dimension
 import com.jeanbarrossilva.h2o.model.intake.Intake
 import com.jeanbarrossilva.h2o.ui.environment.ContentAlpha
 import com.jeanbarrossilva.h2o.ui.environment.Spacing
+import com.jeanbarrossilva.h2o.ui.history.R
 import com.jeanbarrossilva.h2o.ui.theme.H2OTheme
-import com.jeanbarrossilva.h2o.ui.today.R
 
 @Composable
 internal fun IntakeCard(
@@ -68,12 +68,13 @@ internal fun IntakeCard(
                 Arrangement.spacedBy(Spacing.s)
             ) {
                 Text(
-                    stringResource(R.string.today_intake).format("${intake.milliliters}"),
+                    stringResource(com.jeanbarrossilva.h2o.ui.R.string.intake)
+                        .format("${intake.milliliters}"),
                     fontWeight = FontWeight.Bold
                 )
 
                 Text(
-                    stringResource(R.string.today_intake_card_info_drink_water),
+                    stringResource(R.string.history_intake_card_info_drink_water),
                     color = LocalTextStyle.current.color.copy(ContentAlpha.MEDIUM)
                 )
             }
@@ -94,7 +95,7 @@ internal fun IntakeCard(
         Image(
             painterResource(R.drawable.ic_drink_water),
             contentDescription =
-            stringResource(R.string.today_intake_card_icon_drink_content_description),
+            stringResource(R.string.history_intake_card_icon_drink_content_description),
             Modifier
                 .size(48.dp)
                 .clip(CircleShape)

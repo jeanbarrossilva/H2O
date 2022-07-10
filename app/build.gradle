@@ -35,7 +35,10 @@ android {
 }
 
 dependencies {
+    implementation project(':logger')
+    implementation project(':preferences')
     implementation project(':ui')
+    implementation project(':ui-history')
     implementation project(':ui-today')
     implementation libraries.material
 }

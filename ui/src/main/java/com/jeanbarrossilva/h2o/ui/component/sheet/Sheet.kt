@@ -20,7 +20,7 @@ import com.jeanbarrossilva.h2o.ui.component.sheet.Sheet.shape
 import com.jeanbarrossilva.h2o.ui.environment.Spacing
 import com.jeanbarrossilva.h2o.ui.theme.H2OTheme
 
-object Sheet {
+internal object Sheet {
     val shape
         @Composable get() = MaterialTheme.shapes.medium.copy(
             bottomStart = ZeroCornerSize,
@@ -29,7 +29,7 @@ object Sheet {
 }
 
 @Composable
-fun Sheet(
+internal fun Sheet(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit
 ) {

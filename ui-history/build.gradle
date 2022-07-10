@@ -45,5 +45,5 @@ dependencies {
     implementation project(':model')
     implementation project(':preferences')
     implementation project(':ui')
-    implementation libraries.compose.material_icons_extended
+    implementation libraries.constraintlayout.compose
 }
