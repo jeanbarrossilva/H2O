@@ -1,16 +1,14 @@
 package com.jeanbarrossilva.h2o.preferences
 
-import com.jeanbarrossilva.h2o.model.drinker.Drinker
-import com.jeanbarrossilva.h2o.model.intake.IntakeStatus
+import com.jeanbarrossilva.h2o.preferences.preference.OnPreferenceChangeListener
+import com.jeanbarrossilva.h2o.preferences.preference.Preference
 
 interface PreferenceManager {
-    suspend fun getDrinker(): Drinker?
+    suspend fun <V: Any> get(preference: Preference<V>): V?
 
-    suspend fun setDrinker(drinker: Drinker)
+    suspend fun <T: Any> set(preference: Preference<T>, value: T)
 
-    suspend fun getIntakeStatus(): IntakeStatus?
-
-    suspend fun setIntakeStatus(intakeStatus: IntakeStatus)
+    fun doOnChange(listener: OnPreferenceChangeListener)
 
     suspend fun reset()
 }

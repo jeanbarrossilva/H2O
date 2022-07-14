@@ -6,6 +6,11 @@
     <string name="today_frequency_subtitle">
         Amount of water you\'ve intaken in the past 7 days.
     </string>
+    <string
+        name="today_commemoration_emoji"
+        translatable="false">
+        🎉
+    </string>
     <string name="today_log_intake_content_description">Log intake</string>
     <string name="today_history_content_description">History</string>
 </resources>

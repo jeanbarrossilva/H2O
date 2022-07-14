@@ -14,6 +14,7 @@ buildscript {
             constraintlayout: '1.0.1',
             customview: '1.1.0',
             customview_poolingcontainer: '1.0.0-rc01',
+            emoji2: '1.1.0',
             fragment: '1.4.1',
             h2o: [
                 code: 1,

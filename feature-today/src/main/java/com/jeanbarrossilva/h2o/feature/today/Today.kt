@@ -18,16 +18,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.fragment.app.FragmentActivity
+import com.jeanbarrossilva.h2o.feature.today.component.Commemoration
+import com.jeanbarrossilva.h2o.feature.today.component.FrequencyChart
+import com.jeanbarrossilva.h2o.feature.today.component.IntakeStatusChart
+import com.jeanbarrossilva.h2o.feature.today.component.options.Options
 import com.jeanbarrossilva.h2o.model.intake.IntakeLog
 import com.jeanbarrossilva.h2o.model.intake.IntakeStatus
 import com.jeanbarrossilva.h2o.ui.component.Background
 import com.jeanbarrossilva.h2o.ui.component.FloatingActionButton
 import com.jeanbarrossilva.h2o.ui.component.section.Section
 import com.jeanbarrossilva.h2o.ui.theme.H2OTheme
-import com.jeanbarrossilva.h2o.feature.today.component.FrequencyChart
-import com.jeanbarrossilva.h2o.feature.today.component.IntakeStatusChart
-import com.jeanbarrossilva.h2o.feature.today.component.options.Options
-import com.jeanbarrossilva.h2o.feature.today.R
 
 @Composable
 internal fun Today(
@@ -63,35 +63,37 @@ private fun Today(
 ) {
     val scrollState = rememberScrollState()
 
-    Background(modifier) {
-        Column(
-            Modifier
-                .verticalScroll(scrollState)
-                .padding(bottom = FloatingActionButton.Size + FloatingActionButton.Margin * 2)
-        ) {
-            Section(
-                alignment = Alignment.Center
+    Commemoration {
+        Background(modifier) {
+            Column(
+                Modifier
+                    .verticalScroll(scrollState)
+                    .padding(bottom = FloatingActionButton.Size + FloatingActionButton.Margin * 2)
             ) {
-                IntakeStatusChart(status)
+                Section(
+                    alignment = Alignment.Center
+                ) {
+                    IntakeStatusChart(status)
+                }
+
+                Section(
+                    title = { Text(stringResource(R.string.today_frequency)) },
+                    subtitle = { Text(stringResource(R.string.today_frequency_subtitle)) },
+                    isLastOne = true
+                ) {
+                    FrequencyChart(logs)
+                }
             }
 
-            Section(
-                title = { Text(stringResource(R.string.today_frequency)) },
-                subtitle = { Text(stringResource(R.string.today_frequency_subtitle)) },
-                isLastOne = true
-            ) {
-                FrequencyChart(logs)
-            }
+            Options(
+                onIntakeLogRequest,
+                onHistoryRequest,
+                Modifier
+                    .fillMaxWidth()
+                    .padding(bottom = FloatingActionButton.Margin)
+                    .align(Alignment.BottomCenter)
+            )
         }
-
-        Options(
-            onIntakeLogRequest,
-            onHistoryRequest,
-            Modifier
-                .fillMaxWidth()
-                .padding(bottom = FloatingActionButton.Margin)
-                .align(Alignment.BottomCenter)
-        )
     }
 }
 

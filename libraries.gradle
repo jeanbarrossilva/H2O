@@ -19,6 +19,7 @@ buildscript {
             customview: "androidx.customview:customview:${versions.customview}",
             customview_poolingcontainer: "androidx.customview:customview-poolingcontainer:" +
                 "${versions.customview_poolingcontainer}",
+            emoji2: "androidx.emoji2:emoji2:${versions.emoji2}",
             fragment: "androidx.fragment:fragment-ktx:${versions.fragment}",
             koin: "io.insert-koin:koin-android:${versions.koin}",
             kotlin: [

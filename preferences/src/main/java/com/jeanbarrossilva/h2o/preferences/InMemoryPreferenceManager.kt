@@ -1,30 +1,33 @@
 package com.jeanbarrossilva.h2o.preferences
 
-import com.jeanbarrossilva.h2o.model.drinker.Drinker
-import com.jeanbarrossilva.h2o.model.intake.IntakeStatus
+import com.jeanbarrossilva.h2o.preferences.preference.OnPreferenceChangeListener
+import com.jeanbarrossilva.h2o.preferences.preference.Preference
 
 class InMemoryPreferenceManager: PreferenceManager {
-    private var drinker: Drinker? = null
-    private var intakeStatus: IntakeStatus? = null
+    private val preferences = mutableMapOf<Preference<*>, Any>()
+    private val listeners = mutableListOf<OnPreferenceChangeListener>()
 
-    override suspend fun getDrinker(): Drinker? {
-        return drinker
+    @Suppress("UNCHECKED_CAST")
+    override suspend fun <T: Any> get(preference: Preference<T>): T? {
+        return preferences[preference] as T?
     }
 
-    override suspend fun setDrinker(drinker: Drinker) {
-        this.drinker = drinker
+    override suspend fun <T: Any> set(preference: Preference<T>, value: T) {
+        preferences[preference] = value
+        notifyListeners(preference, value)
     }
 
-    override suspend fun getIntakeStatus(): IntakeStatus? {
-        return intakeStatus
-    }
-
-    override suspend fun setIntakeStatus(intakeStatus: IntakeStatus) {
-        this.intakeStatus = intakeStatus
+    override fun doOnChange(listener: OnPreferenceChangeListener) {
+        listeners.add(listener)
     }
 
     override suspend fun reset() {
-        drinker = null
-        intakeStatus = null
+        preferences.clear()
+    }
+
+    private suspend fun <V: Any, P: Preference<V>> notifyListeners(preference: P, value: V) {
+        listeners.forEach { listener ->
+            listener.onPreferenceChange(preference, value)
+        }
     }
 }
