@@ -47,7 +47,7 @@ internal fun Today(
     Today(
         status,
         logs,
-        onIntakeLogRequest = boundary::navigateToIntakeLogger,
+        onIntakeLogRequest = { boundary.navigateToLogger(activity) },
         onHistoryRequest = { boundary.navigateToHistory(activity) },
         modifier
     )
