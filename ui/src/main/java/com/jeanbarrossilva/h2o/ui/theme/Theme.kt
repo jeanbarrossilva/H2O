@@ -9,7 +9,8 @@ import androidx.compose.runtime.CompositionLocalProvider
 fun H2OTheme(content: @Composable () -> Unit) {
     MaterialTheme(
         colorScheme,
-        typography = Typography
+        Shapes,
+        Typography
     ) {
         CompositionLocalProvider(
             LocalContentColor provides MaterialTheme.colorScheme.onBackground,

@@ -1,9 +1,10 @@
 package com.jeanbarrossilva.h2o
 
 import android.app.Application
-import com.jeanbarrossilva.h2o.injection.boundaryModule
 import com.jeanbarrossilva.h2o.feature.history.historyModule
+import com.jeanbarrossilva.h2o.feature.logger.loggerModule
 import com.jeanbarrossilva.h2o.feature.today.todayModule
+import com.jeanbarrossilva.h2o.injection.boundaryModule
 import org.koin.core.context.startKoin
 
 class H2OApplication: Application() {
@@ -14,7 +15,8 @@ class H2OApplication: Application() {
 
     private fun setUpKoin() {
         startKoin {
-            modules(h2oModule, boundaryModule, todayModule, historyModule)
+            modules(h2oModule, boundaryModule)
+            modules(historyModule, loggerModule, todayModule)
         }
     }
 }
