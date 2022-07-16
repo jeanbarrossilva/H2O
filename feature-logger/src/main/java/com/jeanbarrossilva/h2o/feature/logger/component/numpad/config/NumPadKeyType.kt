@@ -12,7 +12,7 @@ import androidx.compose.ui.res.stringResource
 import com.jeanbarrossilva.h2o.feature.logger.R
 import com.jeanbarrossilva.h2o.feature.logger.component.numpad.NumPadKey
 
-sealed interface NumPadKeyType {
+internal sealed interface NumPadKeyType {
     @get:Composable
     val colors: ButtonColors
 

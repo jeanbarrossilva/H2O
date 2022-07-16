@@ -1,6 +1,6 @@
 package com.jeanbarrossilva.h2o.feature.logger.component.numpad.config
 
-sealed interface NumPadKeySpace {
+internal sealed interface NumPadKeySpace {
     val factor: Int
 
     object Default: NumPadKeySpace {
