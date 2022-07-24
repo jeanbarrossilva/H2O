@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">H2O</string>
+    <string
+        name="app_name"
+        translatable="false">
+        H2O
+    </string>
+
+    <string name="notification_channel_reminder_name">Reminder</string>
+    <string name="notification_channel_reminder_description">Reminds you to drink some water.</string>
 </resources>

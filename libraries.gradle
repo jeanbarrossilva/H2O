@@ -16,6 +16,7 @@ buildscript {
                 compose: "androidx.constraintlayout:constraintlayout-compose:" +
                     "${versions.constraintlayout}"
             ],
+            core: "androidx.core:core-ktx:${versions.core}",
             customview: "androidx.customview:customview:${versions.customview}",
             customview_poolingcontainer: "androidx.customview:customview-poolingcontainer:" +
                 "${versions.customview_poolingcontainer}",
@@ -28,6 +29,8 @@ buildscript {
             ],
             kotlinx: [
                 coroutines: [
+                    core: "org.jetbrains.kotlinx:kotlinx-coroutines-core:" +
+                        "${versions.kotlinx.coroutines}",
                     test: "org.jetbrains.kotlinx:kotlinx-coroutines-test:" +
                         "${versions.kotlinx.coroutines}"
                 ]
@@ -37,6 +40,9 @@ buildscript {
             navigation: [
                 fragment: "androidx.navigation:navigation-fragment-ktx:${versions.navigation}",
                 ui: "androidx.navigation:navigation-ui-ktx:${versions.navigation}"
+            ],
+            work: [
+                runtime: "androidx.work:work-runtime-ktx:${versions.work}"
             ]
         ]
     }
