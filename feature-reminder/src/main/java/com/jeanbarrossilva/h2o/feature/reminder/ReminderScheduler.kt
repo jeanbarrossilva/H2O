@@ -1,15 +1,13 @@
 package com.jeanbarrossilva.h2o.feature.reminder
 
-import android.app.NotificationManager
 import android.content.Context
-import androidx.core.app.NotificationCompat
-import androidx.core.content.getSystemService
 import androidx.work.WorkManager
 import com.jeanbarrossilva.h2o.feature.reminder.extensions.builder.PeriodicWorkRequestBuilder
 import com.jeanbarrossilva.h2o.reminder.clock.Clock
 import com.jeanbarrossilva.h2o.reminder.frequency.Frequency
 import com.jeanbarrossilva.h2o.reminder.scheduler.Scheduler
 import com.jeanbarrossilva.h2o.reminder.scheduler.schedule.Schedule
+import io.karn.notify.Notify
 import kotlinx.coroutines.MainScope
 import java.lang.ref.WeakReference
 
@@ -47,14 +45,10 @@ class ReminderScheduler(
 
     private fun sendNotification() {
         context?.run {
-            val notificationManager = getSystemService<NotificationManager>()
-            val notification = NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_water_drop_48)
-                .setContentTitle(getString(R.string.reminder_notification))
-                .setContentIntent(boundary.navigateToLogger(this))
-                .build()
-
-            notificationManager?.notify(0, notification)
+            Notify.with(this)
+                .header { icon = R.drawable.ic_water_drop_48 }
+                .content { title = getString(R.string.reminder_notification) }
+                .show()
         }
     }
 
