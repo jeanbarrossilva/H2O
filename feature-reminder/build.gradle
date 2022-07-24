@@ -34,7 +34,7 @@ android {
 
 dependencies {
     implementation project(':reminder')
-    implementation libraries.core
     implementation libraries.koin
+    implementation libraries.notify
     implementation libraries.work.runtime
 }
