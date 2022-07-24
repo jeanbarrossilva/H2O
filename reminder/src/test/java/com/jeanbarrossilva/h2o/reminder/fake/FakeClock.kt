@@ -1,7 +1,7 @@
 package com.jeanbarrossilva.h2o.reminder.fake
 
 import com.jeanbarrossilva.h2o.reminder.clock.Clock
-import com.jeanbarrossilva.h2o.reminder.extensions.localtime.dec
+import com.jeanbarrossilva.h2o.reminder.extensions.localtime.inc
 import com.jeanbarrossilva.h2o.reminder.extensions.localtime.minus
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestScope
@@ -17,7 +17,7 @@ class FakeClock(override val coroutineScope: TestScope): Clock() {
     }
 
     override fun onTick() {
-        --currentTime
+        currentTime++
     }
 
     fun jumpTo(time: LocalTime) {

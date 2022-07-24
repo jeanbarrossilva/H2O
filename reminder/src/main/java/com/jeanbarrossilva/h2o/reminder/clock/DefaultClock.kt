@@ -1,6 +1,6 @@
 package com.jeanbarrossilva.h2o.reminder.clock
 
-import com.jeanbarrossilva.h2o.reminder.extensions.localtime.dec
+import com.jeanbarrossilva.h2o.reminder.extensions.localtime.inc
 import kotlinx.coroutines.MainScope
 import java.time.LocalTime
 
@@ -14,6 +14,6 @@ class DefaultClock: Clock() {
     }
 
     override fun onTick() {
-        --currentTime
+        currentTime++
     }
 }
