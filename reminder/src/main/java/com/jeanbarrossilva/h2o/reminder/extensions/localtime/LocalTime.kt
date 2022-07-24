@@ -8,8 +8,8 @@ import kotlin.time.Duration.Companion.seconds
 internal val LocalTime?.orMin: LocalTime
     get() = this ?: LocalTime.of(0, 0)
 
-internal operator fun LocalTime.dec(): LocalTime {
-    return minusMinutes(1)
+internal operator fun LocalTime.inc(): LocalTime {
+    return plusMinutes(1)
 }
 
 internal operator fun LocalTime.minus(other: LocalTime): Duration {
