@@ -10,7 +10,7 @@ class FrequencyTests {
     @Test
     fun `GIVEN a threshold greater than clock's delay WHEN creating a repeated frequency with it THEN it throws`() {
         assertFailsWith<IllegalStateException> {
-            Frequency.Repeatedly(Clock.delay + 1.nanoseconds)
+            Frequency.Repeatedly(Clock.delay - 1.nanoseconds)
         }
     }
 }
