@@ -12,6 +12,7 @@ buildscript {
             compose: '1.2.0-rc02',
             compose_material: '1.0.0-alpha13',
             constraintlayout: '1.0.1',
+            core: '1.8.0',
             customview: '1.1.0',
             customview_poolingcontainer: '1.0.0-rc01',
             emoji2: '1.1.0',
@@ -29,7 +30,8 @@ buildscript {
             ],
             material: '1.6.1',
             mpandroidchart: 'v3.1.0',
-            navigation: '2.5.0'
+            navigation: '2.5.0',
+            work: '2.7.1'
         ]
     }
 }
