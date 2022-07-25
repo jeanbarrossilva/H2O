@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="preferences_label">Preferências</string>
+    <string name="preference_option_title_intake_goal">Meta</string>
+</resources>

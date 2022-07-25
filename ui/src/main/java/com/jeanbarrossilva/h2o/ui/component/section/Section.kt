@@ -6,16 +6,13 @@ import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.Divider
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import com.jeanbarrossilva.h2o.ui.component.Background
+import com.jeanbarrossilva.h2o.ui.component.Divider
 import com.jeanbarrossilva.h2o.ui.component.section.Section.Alignment
 import com.jeanbarrossilva.h2o.ui.environment.Spacing
 import com.jeanbarrossilva.h2o.ui.theme.H2OTheme
@@ -88,10 +85,7 @@ private fun Section(
 
         if (!isLastOne) {
             Box(Modifier.padding(horizontal = Spacing.xxxl)) {
-                Divider(
-                    Modifier.clip(CircleShape),
-                    MaterialTheme.colorScheme.onSurfaceVariant
-                )
+                Divider()
             }
         }
     }

@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
 }
 
@@ -7,13 +7,11 @@ android {
     compileSdk versions.android.sdk.compile
 
     defaultConfig {
-        applicationId 'com.jeanbarrossilva.h2o'
         minSdk versions.android.sdk.min
         targetSdk versions.android.sdk.target
-        versionCode versions.h2o.code
-        versionName versions.h2o.name
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        consumerProguardFiles 'consumer-rules.pro'
     }
 
     buildTypes {
@@ -24,6 +22,10 @@ android {
         }
     }
 
+    buildFeatures {
+        compose true
+    }
+
     compileOptions {
         sourceCompatibility versions.java
         targetCompatibility versions.java
@@ -32,18 +34,14 @@ android {
     kotlinOptions {
         jvmTarget = versions.java.toString()
     }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion versions.compose
+    }
 }
 
 dependencies {
-    implementation project(':feature-history')
-    implementation project(':feature-logger')
-    implementation project(':feature-preferences')
-    implementation project(':feature-reminder')
-    implementation project(':feature-today')
-    implementation project(':logger')
+    implementation project(':model')
     implementation project(':preferences')
-    implementation project(':reminder')
     implementation project(':ui')
-    implementation libraries.material
-    implementation libraries.work.runtime
 }

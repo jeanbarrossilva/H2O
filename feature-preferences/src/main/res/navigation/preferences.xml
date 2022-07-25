@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/preferences"
+    app:startDestination="@id/preferences_fragment">
+    <fragment
+        android:id="@+id/preferences_fragment"
+        android:name="com.jeanbarrossilva.h2o.feature.preferences.PreferencesFragment"
+        android:label="@string/preferences_label" />
+</navigation>

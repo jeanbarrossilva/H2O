@@ -1,38 +1,32 @@
-package com.jeanbarrossilva.h2o.ui.component.section
+package com.jeanbarrossilva.h2o.feature.preferences.component.preference
 
 import android.content.res.Configuration
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.LocalTextStyle
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ProvideTextStyle
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import com.jeanbarrossilva.h2o.ui.component.Background
-import com.jeanbarrossilva.h2o.ui.environment.Spacing
 import com.jeanbarrossilva.h2o.ui.provider.ProvideMediumColoredTextStyle
 import com.jeanbarrossilva.h2o.ui.theme.H2OTheme
 
 @Composable
-internal fun SectionHeadline(
-    title: @Composable (() -> Unit)?,
-    subtitle: @Composable (() -> Unit)?,
-    modifier: Modifier = Modifier
+internal fun PreferenceCentralContent(
+    summary: @Composable (() -> Unit)?,
+    modifier: Modifier = Modifier,
+    title: @Composable () -> Unit
 ) {
-    Column(
-        modifier,
-        Arrangement.spacedBy(Spacing.l)
-    ) {
+    Column(modifier) {
         ProvideTextStyle(
-            LocalTextStyle.current + MaterialTheme.typography.headlineSmall
-        ) {
-            title?.invoke()
-        }
+            LocalTextStyle.current.copy(fontWeight = FontWeight.Bold),
+            content = title
+        )
 
         ProvideMediumColoredTextStyle {
-            subtitle?.invoke()
+            summary?.invoke()
         }
     }
 }
@@ -40,13 +34,12 @@ internal fun SectionHeadline(
 @Composable
 @Preview
 @Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
-private fun SectionHeadlinePreview() {
+private fun PreferenceCentralContentPreview() {
     H2OTheme {
         Background(isFilling = false) {
-            SectionHeadline(
-                title = { Text("Title") },
-                subtitle = { Text("Subtitle") }
-            )
+            PreferenceCentralContent(summary = { Text("Summary") }) {
+                Text("Title")
+            }
         }
     }
 }

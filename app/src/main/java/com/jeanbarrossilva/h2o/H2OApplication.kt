@@ -8,6 +8,7 @@ import androidx.core.content.getSystemService
 import androidx.work.Configuration
 import com.jeanbarrossilva.h2o.feature.history.historyModule
 import com.jeanbarrossilva.h2o.feature.logger.loggerModule
+import com.jeanbarrossilva.h2o.feature.preferences.preferencesModule
 import com.jeanbarrossilva.h2o.feature.reminder.ReminderScheduler
 import com.jeanbarrossilva.h2o.feature.reminder.ReminderWorkerFactory
 import com.jeanbarrossilva.h2o.feature.today.todayModule
@@ -37,7 +38,7 @@ class H2OApplication: Application(), Configuration.Provider {
         startKoin {
             androidContext(this@H2OApplication)
             modules(h2oModule, boundaryModule)
-            modules(historyModule, loggerModule, todayModule)
+            modules(historyModule, loggerModule, preferencesModule, todayModule)
         }
     }
 
